@@ -1089,10 +1089,6 @@ controller.left.onEvent(ControllerButtonEvent.Released, function () {
 })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
-    music.stopAllSounds()
-})
-controller.anyButton.onEvent(ControllerButtonEvent.Repeated, function () {
-    music.play(music.createSoundEffect(WaveShape.Sawtooth, 1, 1, 255, 172, 550, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
 })
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     mySprite3 = sprites.create(img`
@@ -1402,9 +1398,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let cristal: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
-let mySprite: Sprite = null
 let Zarlenem: Sprite = null
+let mySprite: Sprite = null
 let Arlem: Sprite = null
+music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
+tiles.setTilemap(tilemap`niveau1`)
 Arlem = sprites.create(img`
     .......22eee.......
     .....2222eeeee.....
@@ -1471,14 +1469,9 @@ let mySprite2 = sprites.create(img`
     ..........bb9bb.b99b8...........
     ..........bb9bb.bbbab...........
     `, SpriteKind.Enemy)
-tiles.setTilemap(tilemap`niveau1`)
 tiles.placeOnTile(Arlem, tiles.getTileLocation(2, 2))
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(29, 31))
 controller.moveSprite(Arlem)
 scene.cameraFollowSprite(Arlem)
-game.onUpdate(function () {
-	
-})
-forever(function () {
-    music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.UntilDone)
-})
+scaling.scaleToPixels(mySprite, 32, ScaleDirection.Vertically, ScaleAnchor.Middle)
+scaling.scaleToPixels(mySprite, 32, ScaleDirection.Horizontally, ScaleAnchor.Middle)
