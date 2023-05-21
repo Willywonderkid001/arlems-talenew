@@ -6,6 +6,34 @@ namespace SpriteKind {
     export const tuile = SpriteKind.create()
     export const object = SpriteKind.create()
 }
+controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
+    mySprite = sprites.create(img`
+        . . . . . 8 . . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        . . . . 9 8 9 . . . . 
+        9 9 9 . 8 8 8 . 9 9 9 
+        9 6 9 9 9 9 9 9 9 6 9 
+        9 9 9 e e e e e 9 9 9 
+        . . . . e e e . . . . 
+        . . . . . e . . . . . 
+        . . . . . e . . . . . 
+        . . . . . 9 . . . . . 
+        . . . . 9 9 9 . . . . 
+        . . . . 9 9 9 . . . . 
+        . . . . 9 9 9 . . . . 
+        `, SpriteKind.Projectile)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleporteur, function (sprite, otherSprite) {
     game.showLongText("Zarlenem tu-es ou bon sens", DialogLayout.Full)
     tiles.setCurrentTilemap(tilemap`niveau4`)
@@ -755,32 +783,42 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite = sprites.create(img`
-        . . . . . 8 . . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        9 9 9 . 8 8 8 . 9 9 9 
-        9 6 9 9 9 9 9 9 9 6 9 
-        9 9 9 e e e e e 9 9 9 
-        . . . . e e e . . . . 
-        . . . . . e . . . . . 
-        . . . . . e . . . . . 
-        . . . . . 9 . . . . . 
-        . . . . 9 9 9 . . . . 
-        . . . . 9 9 9 . . . . 
-        . . . . 9 9 9 . . . . 
+    tiles.setCurrentTilemap(tilemap`niveau7`)
+    myMinimap = minimap.minimap(MinimapScale.Quarter, 2, 0)
+    Arlem = sprites.create(img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd2...
+        999a.dddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..dddffffffffffddd.
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....aff....
+        .....111....111....
         `, SpriteKind.Projectile)
+    minimap.includeSprite(myMinimap, Arlem, MinimapSpriteScale.MinimapScale)
+    mapsprite = sprites.create(minimap.getImage(minimap.minimap(MinimapScale.Quarter, 2, 0)), SpriteKind.Player)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
@@ -1398,8 +1436,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let cristal: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
-let mySprite: Sprite = null
+let mapsprite: Sprite = null
+let myMinimap: minimap.Minimap = null
 let Zarlenem: Sprite = null
+let mySprite: Sprite = null
 let Arlem: Sprite = null
 music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
 tiles.setTilemap(tilemap`niveau1`)
