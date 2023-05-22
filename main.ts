@@ -109,6 +109,8 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
         `)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherSprite) {
+    tiles.placeOnTile(Arlem, tiles.getTileLocation(24, 31))
+    scene.cameraFollowSprite(Zarlenem)
     game.showLongText("vaaaaaaaaaa tttttt'eeeeennnnn aaaaahhhhhhhhhhhhhhhhhhhhh", DialogLayout.Top)
     Zarlenem.setImage(img`
         ..................................
@@ -146,8 +148,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ..................................
         ..................................
         `)
-    game.showLongText("Qu'est-ce qui ce passe!", DialogLayout.Bottom)
-    game.showLongText("Zarlenem!!", DialogLayout.Bottom)
+    game.showLongText("Qu'est-ce qui ce passe!", DialogLayout.Top)
+    game.showLongText("Zarlenem!!", DialogLayout.Top)
     Zarlenem.setImage(img`
         ..................................
         .............eee..................
@@ -184,7 +186,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ...............fffffffff1.........
         ..................................
         `)
-    game.showLongText("euh Zarlenem?", DialogLayout.Bottom)
+    game.showLongText("euh Zarlenem?", DialogLayout.Top)
     Zarlenem.setImage(img`
         ..................................
         .............eee..................
@@ -221,7 +223,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ..................................
         ..................................
         `)
-    game.showLongText("Qu'est-ce qu t'arrive", DialogLayout.Bottom)
+    game.showLongText("Qu'est-ce qu t'arrive", DialogLayout.Top)
     Zarlenem.setImage(img`
         ..................................
         .............eee..................
@@ -258,7 +260,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ..................................
         ..................................
         `)
-    game.showLongText("répond moi bon sens!", DialogLayout.Bottom)
+    game.showLongText("répond moi bon sens!", DialogLayout.Top)
     Zarlenem.setImage(img`
         ........eeee...
         ...e8e8ee88e8..
@@ -292,6 +294,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ...fff...ff6...
         ...222...222...
         `)
+    tiles.placeOnTile(Arlem, tiles.getTileLocation(31, 30))
+    Zarlenem.follow(Arlem, 3)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.object, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
@@ -782,44 +786,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     controller.up.isPressed()
     )
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    tiles.setCurrentTilemap(tilemap`niveau7`)
-    myMinimap = minimap.minimap(MinimapScale.Quarter, 2, 0)
-    Arlem = sprites.create(img`
-        .......22eee.......
-        .....2222eeeee.....
-        ....22222eeeeee....
-        ...222222222eeee...
-        ...2222222dd22ee...
-        ...222228dd88dee...
-        ...222288dd88d2e...
-        9992222dddddddd2...
-        969a2dddddddddd2...
-        999a.dddffffddd....
-        .aaaadddddddddd....
-        ..aaffffffffffff...
-        ..affffffffffffff..
-        ..ffffffffffffffff.
-        ..affffffffffffaff.
-        ..affffffffffffaff.
-        ..affffffffffffaff.
-        ..affffffffffffaff.
-        ..affffffffffffaff.
-        ..affffffffffffaff.
-        ..dddffffffffffddd.
-        .....afffffffff889.
-        .....afff..faff8889
-        .....aff....aff9889
-        .....aff....aff.999
-        .....aff....aff....
-        .....aff....aff....
-        .....aff....aff....
-        .....aff....aff....
-        .....111....111....
-        `, SpriteKind.Projectile)
-    minimap.includeSprite(myMinimap, Arlem, MinimapSpriteScale.MinimapScale)
-    mapsprite = sprites.create(minimap.getImage(minimap.minimap(MinimapScale.Quarter, 2, 0)), SpriteKind.Player)
-})
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
     Arlem.setImage(img`
@@ -1088,11 +1054,10 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     )
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
-    game.showLongText("ah te voici Zarlenem", DialogLayout.Bottom)
-    game.showLongText("mon frère que fais-tu ici je te cherchais", DialogLayout.Bottom)
+    game.showLongText("ah te voici Zarlenem", DialogLayout.Top)
+    game.showLongText("mon frère que fais-tu ici je te cherchais", DialogLayout.Top)
     tiles.setCurrentTilemap(tilemap`niveau6`)
     tiles.placeOnTile(Zarlenem, tiles.getTileLocation(29, 31))
-    tiles.placeOnTile(Arlem, tiles.getTileLocation(29, 31))
 })
 controller.left.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
@@ -1436,13 +1401,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 let cristal: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
-let mapsprite: Sprite = null
-let myMinimap: minimap.Minimap = null
 let Zarlenem: Sprite = null
 let mySprite: Sprite = null
 let Arlem: Sprite = null
-music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
 tiles.setTilemap(tilemap`niveau1`)
+music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
 Arlem = sprites.create(img`
     .......22eee.......
     .....2222eeeee.....
