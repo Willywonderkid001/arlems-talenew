@@ -295,7 +295,908 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
         ...222...222...
         `)
     tiles.placeOnTile(Arlem, tiles.getTileLocation(31, 30))
-    Zarlenem.follow(Arlem, 3)
+    scene.cameraFollowSprite(Arlem)
+    Zarlenem.follow(Arlem, 50)
+    tiles.setCurrentTilemap(tilemap`niveau20`)
+    controller.moveSprite(Arlem, 125, 125)
+    animation.runImageAnimation(
+    Arlem,
+    [img`
+        . . . . . . . . . . . 
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f f a f . . 
+        . 9 8 f f f f a f . . 
+        . a a f f f f f a . . 
+        . 9 8 f f f f f d . . 
+        . 9 8 f f f d d f . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f f a . 
+        . 8 8 f f a f f f a . 
+        . . . f f a f f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . 1 1 1 . 
+        . . . 1 1 1 . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f a f . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f f a . 
+        . a a f f f f f f d . 
+        . 9 8 f f f f d d . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f a . 
+        . 9 8 f f f f f f f a 
+        . 8 8 f f f f f f f a 
+        . . . f f f f . f f a 
+        . . f f f f . . f f a 
+        . . f f f f . . 1 1 1 
+        . . f f f . . . . . . 
+        . . 1 1 1 . . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f f a f . . 
+        . 9 8 f f f f a f . . 
+        . a a f f f f f a . . 
+        . 9 8 f f f f f d . . 
+        . 9 8 f f f d d f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f f a . 
+        . 8 8 f f a f f f a . 
+        . . . f f a f f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . 1 1 1 . 
+        . . . 1 1 1 . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f d d d f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 8 8 . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . 1 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . 
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . a a f f a f f f . . 
+        . 9 8 d f a f f f . . 
+        . 9 8 f d d f f f . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f f a . 
+        . 8 8 f f a f f f a . 
+        . . . f f a f f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . 1 1 1 . 
+        . . . 1 1 1 . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f a f f f . . 
+        . a d f f a f f f . . 
+        . 9 8 d d f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f a . 
+        . 9 8 f f f f f f f a 
+        . 8 8 f f f f f f f a 
+        . . . f f f f . f f a 
+        . . f f f f . . f f a 
+        . . f f f f . . 1 1 1 
+        . . f f f . . . . . . 
+        . . 1 1 1 . . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . 9 8 f f f a f f . . 
+        . a a f f a f f f . . 
+        . 9 8 d f a f f f . . 
+        . 9 8 f d d f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f a . . 
+        . 9 8 f f f f f f a . 
+        . 8 8 f f a f f f a . 
+        . . . f f a f f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . f f a . 
+        . . . f f a . 1 1 1 . 
+        . . . 1 1 1 . . . . . 
+        . . . . . . . . . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . 2 e e e e . . . 
+        . . 2 2 2 e e e e . . 
+        . . 2 2 2 2 e 2 e . . 
+        . . a 2 2 2 2 d 2 2 . 
+        . . a 2 2 d d 8 d . . 
+        . . a 2 d d d d d . . 
+        . a a 2 d d d d d . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . a a f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f d d d f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 9 8 f f f f f f . . 
+        . 8 8 . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . f f f f . . . 
+        . . . . 1 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `],
+    100,
+    controller.right.isPressed()
+    )
+    animation.runImageAnimation(
+    Arlem,
+    [img`
+        ...................
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffaff.
+        ..dddfffff8889faff.
+        .....ffffff888addd.
+        .....afff..f8aaa...
+        .....aff....faaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....aff..99
+        .....aff....111....
+        .....111...........
+        `,img`
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..dddffff8889ffaff.
+        .....fffff8889faff.
+        .....ffffff888addd.
+        .....affffff8aaa...
+        .....afff..ffaaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....111..99
+        .....aff...........
+        .....aff...........
+        .....111...........
+        `,img`
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffaff.
+        ..dddfffff8889faff.
+        .....ffffff888addd.
+        .....affffff8aaa...
+        .....afff..ffaaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....aff..99
+        .....aff....aff....
+        .....aff....111....
+        .....111...........
+        `,img`
+        ...................
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffaff.
+        ..afffffff8889faff.
+        ..dddffffff888addd.
+        .....afff..f8aaa...
+        .....aff....faaa9..
+        .....aff....afa8899
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....aff..9.
+        .....aff....aff....
+        .....111....111....
+        `,img`
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffaff.
+        ..afffffff8889fddd.
+        ..dddffffff888a....
+        .....affffff8aaa...
+        .....afff..ffaaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....aff..99
+        .....aff....aff....
+        .....111....aff....
+        ............111....
+        `,img`
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffddd.
+        ..afffffff8889f....
+        ..dddffffff888a....
+        .....affffff8aaa...
+        .....afff..ffaaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....111....aff..99
+        ............aff....
+        ............aff....
+        ............111....
+        `,img`
+        ......22eeeee......
+        .....222eeeeee.....
+        ....2222eeeeeee....
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        ...22222eeeeeeee...
+        999.22222eeeeee....
+        969af22222eeeee....
+        999aff222222eee....
+        .aaaafffffffffff...
+        ..faae9ffffffffff..
+        ..ffe889ffffffffff.
+        ..aff8889ffffffaff.
+        ..afff8889fffffaff.
+        ..affff8889ffffaff.
+        ..afffff8889fffaff.
+        ..affffff8889ffaff.
+        ..afffffff8889fddd.
+        ..dddffffff888a....
+        .....affffff8aaa...
+        .....afff..ffaaa9..
+        .....aff....afa889.
+        .....aff....aff9889
+        .....aff....aff.989
+        .....aff....aff..99
+        .....aff....aff....
+        .....111....aff....
+        ............111....
+        `],
+    100,
+    controller.up.isPressed()
+    )
+    animation.runImageAnimation(
+    Arlem,
+    [img`
+        . . . . . . . . . . . 
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f a f f f f 8 9 . 
+        . . f a f f f f 8 9 . 
+        . . a f f f f f a a . 
+        . . d f f f f f 8 9 . 
+        . . f d d f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . a a f f f f f 8 9 . 
+        . a f f f a f f 8 8 . 
+        . a f f f a f f . . . 
+        . a f f . a f f . . . 
+        . a f f . a f f . . . 
+        . 1 1 1 . a f f . . . 
+        . . . . . 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f a f f f f 8 9 . 
+        . . a f f f f f 8 9 . 
+        . . a f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        . d f f f f f f a a . 
+        . . d d f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        a f f f f f f f 8 9 . 
+        a f f f f f f f 8 8 . 
+        a f f . f f f f . . . 
+        a f f . . f f f f . . 
+        1 1 1 . . f f f f . . 
+        . . . . . . f f f . . 
+        . . . . . . 1 1 1 . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f a f f f f 8 9 . 
+        . . f a f f f f 8 9 . 
+        . . a f f f f f a a . 
+        . . d f f f f f 8 9 . 
+        . . f d d f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . a f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        . a f f f a f f 8 8 . 
+        . a f f f a f f . . . 
+        . a f f . a f f . . . 
+        . a f f . a f f . . . 
+        . 1 1 1 . a f f . . . 
+        . . . . . 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . 
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f d d d f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 8 . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . 1 1 1 1 . . . . 
+        `,img`
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f f a f f a a . 
+        . . f f f a f d 8 9 . 
+        . . f f f d d f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . a f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        . a f f f a f f 8 8 . 
+        . a f f f a f f . . . 
+        . a f f . a f f . . . 
+        . a f f . a f f . . . 
+        . 1 1 1 . a f f . . . 
+        . . . . . 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f f a f f 8 9 . 
+        . . f f f a f f d a . 
+        . . f f f f d d 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        a f f f f f f f 8 9 . 
+        a f f f f f f f 8 8 . 
+        a f f . f f f f . . . 
+        a f f . . f f f f . . 
+        1 1 1 . . f f f f . . 
+        . . . . . . f f f . . 
+        . . . . . . 1 1 1 . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f a f f f 8 9 . 
+        . . f f f a f f a a . 
+        . . f f f a f d 8 9 . 
+        . . f f f d d f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . a f f f f f 8 9 . 
+        . a f f f f f f 8 9 . 
+        . a f f f a f f 8 8 . 
+        . a f f f a f f . . . 
+        . a f f . a f f . . . 
+        . a f f . a f f . . . 
+        . 1 1 1 . a f f . . . 
+        . . . . . 1 1 1 . . . 
+        . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . 
+        . . . e e e e 2 . . . 
+        . . e e e e 2 2 2 . . 
+        . . e 2 e 2 2 2 2 . . 
+        . 2 2 d 2 2 2 2 a . . 
+        . . d 8 d d 2 2 a . . 
+        . . d d d d d 2 a . . 
+        . . d d d d d 2 a a . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f a a . 
+        . . f f f f f f 8 9 . 
+        . . f d d d f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 9 . 
+        . . f f f f f f 8 8 . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . a f f f . . . . 
+        . . . 1 1 1 1 . . . . 
+        `],
+    100,
+    controller.left.isPressed()
+    )
+    animation.runImageAnimation(
+    Arlem,
+    [img`
+        ...................
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..dddffffffffffaff.
+        .....ffffffffffddd.
+        .....afff..faff889.
+        .....aff....aff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....111....
+        .....111...........
+        `,img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..dddffffffffffaff.
+        .....ffffffffffaff.
+        .....ffffffffffddd.
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....111....
+        .....aff...........
+        .....aff...........
+        .....111...........
+        `,img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..dddffffffffffaff.
+        .....ffffffffffddd.
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....111....
+        .....111...........
+        `,img`
+        ...................
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..dddffffffffffddd.
+        .....afff..faff889.
+        .....aff....aff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....aff....
+        .....111....111....
+        `,img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffddd.
+        ..dddffffffffff89..
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....aff....aff....
+        .....111....aff....
+        ............111....
+        `,img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffddd.
+        ..affffffffffff9...
+        ..dddffffffffff89..
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....111....aff....
+        ............aff....
+        ............aff....
+        ............111....
+        `,img`
+        .......22eee.......
+        .....2222eeeee.....
+        ....22222eeeeee....
+        ...222222222eeee...
+        ...2222222dd22ee...
+        ...222228dd88dee...
+        ...222288dd88d2e...
+        9992222dddddddd2...
+        969a2dddddddddd....
+        999aadddffffddd....
+        .aaaadddddddddd....
+        ..aaffffffffffff...
+        ..affffffffffffff..
+        ..ffffffffffffffff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffaff.
+        ..affffffffffffddd.
+        ..dddffffffffff89..
+        .....afffffffff889.
+        .....afff..faff8889
+        .....aff....aff9889
+        .....aff....aff.999
+        .....aff....aff....
+        .....aff....aff....
+        .....111....aff....
+        ............aff....
+        ............111....
+        `],
+    100,
+    controller.down.isPressed()
+    )
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.object, function (sprite, otherSprite) {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
@@ -785,6 +1686,10 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     110,
     controller.up.isPressed()
     )
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
+    tiles.placeOnTile(Arlem, tiles.getTileLocation(16, 16))
+    tiles.setCurrentTilemap(tilemap`niveau19`)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
