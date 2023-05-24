@@ -6,34 +6,6 @@ namespace SpriteKind {
     export const tuile = SpriteKind.create()
     export const object = SpriteKind.create()
 }
-controller.A.onEvent(ControllerButtonEvent.Repeated, function () {
-    mySprite = sprites.create(img`
-        . . . . . 8 . . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        . . . . 9 8 9 . . . . 
-        9 9 9 . 8 8 8 . 9 9 9 
-        9 6 9 9 9 9 9 9 9 6 9 
-        9 9 9 e e e e e 9 9 9 
-        . . . . e e e . . . . 
-        . . . . . e . . . . . 
-        . . . . . e . . . . . 
-        . . . . . 9 . . . . . 
-        . . . . 9 9 9 . . . . 
-        . . . . 9 9 9 . . . . 
-        . . . . 9 9 9 . . . . 
-        `, SpriteKind.Projectile)
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleporteur, function (sprite, otherSprite) {
     game.showLongText("Zarlenem tu-es ou bon sens", DialogLayout.Full)
     tiles.setCurrentTilemap(tilemap`niveau4`)
@@ -302,231 +274,142 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
     animation.runImageAnimation(
     Arlem,
     [img`
-        . . . . . . . . . . . 
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f f a f . . 
-        . 9 8 f f f f a f . . 
-        . a a f f f f f a . . 
-        . 9 8 f f f f f d . . 
-        . 9 8 f f f d d f . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f f a . 
-        . 8 8 f f a f f f a . 
-        . . . f f a f f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . 1 1 1 . 
-        . . . 1 1 1 . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
+        .....2eeee......
+        ....222eeee.....
+        ....2222e2e.....
+        ....a2222d22....
+        ....a22dd8d.....
+        ....a2ddddd.....
+        ...aa2ddddd.....
+        ...aaffffff.....
+        ...98ffffff.....
+        ...98fffffa.....
+        ...9fffffffa....
+        ...ffaffffffa...
+        ..fffafffffffa..
+        dfffafffffffffad
+        dffa8ffffff.fffd
+        .da98ffffff..fd.
+        ...98ffffff.....
+        ...98ffffffaa...
+        ...98ffffffffa..
+        ...88ffffffffa..
+        ...fffa...ffffa.
+        ..ffffa....ffff.
+        .ffffa......fff.
+        .fffa.......ff1.
+        .1ff........11..
+        ..11............
         `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f a f . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f f a . 
-        . a a f f f f f f d . 
-        . 9 8 f f f f d d . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f a . 
-        . 9 8 f f f f f f f a 
-        . 8 8 f f f f f f f a 
-        . . . f f f f . f f a 
-        . . f f f f . . f f a 
-        . . f f f f . . 1 1 1 
-        . . f f f . . . . . . 
-        . . 1 1 1 . . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
+        .....2eeee......
+        ....222eeee.....
+        ....2222e2e.....
+        ....a2222d22....
+        ....a22dd8d.....
+        ....a2ddddd.....
+        ...aa2ddddd.....
+        ...aaffffff.....
+        ...98ffffff.....
+        ...98fffffa.....
+        ...9fffffffa....
+        ...fffffffffa...
+        ...fffaffffffa..
+        ..ffffaffffffa..
+        ..fffafffffffd..
+        ..dffafffffdd...
+        ...ddffffff.....
+        ...98ffffff.....
+        ...98fffffff....
+        ...88ffffffff...
+        ....ffa..ffff...
+        ...fffa...ffff..
+        ...fffa....fff..
+        ...ffa.....fff..
+        ...111.....111..
+        ................
         `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f f a f . . 
-        . 9 8 f f f f a f . . 
-        . a a f f f f f a . . 
-        . 9 8 f f f f f d . . 
-        . 9 8 f f f d d f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f f a . 
-        . 8 8 f f a f f f a . 
-        . . . f f a f f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . 1 1 1 . 
-        . . . 1 1 1 . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
+        ......2eeee.....
+        .....222eeee....
+        .....2222e2e....
+        .....a2222d22...
+        .....a22dd8d....
+        .....a2ddddd....
+        ....aa2ddddd....
+        ....aaffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....aaffffff....
+        ....98ffffff....
+        ....98ffdddf....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....88.ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......1111.....
         `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f d d d f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 8 8 . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . 1 1 1 1 . . . 
-        . . . . . . . . . . . 
+        .....2eeee......
+        ....222eeee.....
+        ....2222e2e.....
+        ....a2222d22....
+        ....a22dd8d.....
+        ....a2ddddd.....
+        ...aa2ddddd.....
+        ...aaffffff.....
+        ...98ffffff.....
+        ...98fffffa.....
+        ...9fffffffa....
+        ...ffaffffffa...
+        ..fffafffffffa..
+        dfffafffffffffad
+        dffa8ffffff.fffd
+        .da98ffffff..fd.
+        ...98ffffff.....
+        ...98ffffffaa...
+        ...98ffffffffa..
+        ...88ffffffffa..
+        ...fffa...ffffa.
+        ..ffffa....ffff.
+        .ffffa......fff.
+        .fffa.......ff1.
+        .1ff........11..
+        ..11............
         `,img`
-        . . . . . . . . . . . 
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . a a f f a f f f . . 
-        . 9 8 d f a f f f . . 
-        . 9 8 f d d f f f . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f f a . 
-        . 8 8 f f a f f f a . 
-        . . . f f a f f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . 1 1 1 . 
-        . . . 1 1 1 . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
-        `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f a f f f . . 
-        . a d f f a f f f . . 
-        . 9 8 d d f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f a . 
-        . 9 8 f f f f f f f a 
-        . 8 8 f f f f f f f a 
-        . . . f f f f . f f a 
-        . . f f f f . . f f a 
-        . . f f f f . . 1 1 1 
-        . . f f f . . . . . . 
-        . . 1 1 1 . . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
-        `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . 9 8 f f f a f f . . 
-        . a a f f a f f f . . 
-        . 9 8 d f a f f f . . 
-        . 9 8 f d d f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f a . . 
-        . 9 8 f f f f f f a . 
-        . 8 8 f f a f f f a . 
-        . . . f f a f f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . f f a . 
-        . . . f f a . 1 1 1 . 
-        . . . 1 1 1 . . . . . 
-        . . . . . . . . . . . 
-        . . . . . . . . . . . 
-        `,img`
-        . . . 2 e e e e . . . 
-        . . 2 2 2 e e e e . . 
-        . . 2 2 2 2 e 2 e . . 
-        . . a 2 2 2 2 d 2 2 . 
-        . . a 2 2 d d 8 d . . 
-        . . a 2 d d d d d . . 
-        . a a 2 d d d d d . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . a a f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f d d d f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 9 8 f f f f f f . . 
-        . 8 8 . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . f f f f . . . 
-        . . . . 1 1 1 1 . . . 
-        . . . . . . . . . . . 
+        ......2eeee.....
+        .....222eeee....
+        .....2222e2e....
+        .....a2222d22...
+        .....a22dd8d....
+        .....a2ddddd....
+        ....aa2ddddd....
+        ....aaffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....aaffffff....
+        ....98ffffff....
+        ....98ffdddf....
+        ....98ffffff....
+        ....98ffffff....
+        ....98ffffff....
+        ....88.ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......ffff.....
+        .......1111.....
         `],
-    100,
+    150,
     controller.right.isPressed()
     )
     animation.runImageAnimation(
@@ -2307,7 +2190,6 @@ let cristal: Sprite = null
 let mySprite4: Sprite = null
 let mySprite3: Sprite = null
 let Zarlenem: Sprite = null
-let mySprite: Sprite = null
 let Arlem: Sprite = null
 tiles.setTilemap(tilemap`niveau1`)
 music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
