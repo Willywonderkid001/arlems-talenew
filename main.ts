@@ -12,14 +12,6 @@ namespace SpriteKind {
     export const object = SpriteKind.create()
     export const enemy3 = SpriteKind.create()
 }
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorLight0, function (sprite, location) {
-    scene.cameraShake(10, 1000)
-    controller.startLightPulse(0xffffff, 1000)
-    tiles.placeOnTile(Arlem, tiles.getTileLocation(13, 6))
-    tiles.placeOnTile(Zarlenem_infecté, tiles.getTileLocation(1, 1))
-    scene.cameraShake(10, 1000)
-    tiles.setCurrentTilemap(tilemap`niveau22`)
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleporteur, function (sprite, otherSprite) {
     game.showLongText("Zarlenem tu-es ou bon sens", DialogLayout.Full)
     tiles.setCurrentTilemap(tilemap`niveau4`)
@@ -98,6 +90,14 @@ controller.right.onEvent(ControllerButtonEvent.Released, function () {
         . . . . f f f f . . . 
         . . . . 1 1 1 1 . . . 
         `)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark0, function (sprite, location) {
+    scene.cameraShake(10, 1000)
+    controller.startLightPulse(0xff0000, 1000)
+    tiles.placeOnTile(Arlem, tiles.getTileLocation(13, 6))
+    tiles.placeOnTile(Zarlenem_infecté, tiles.getTileLocation(1, 1))
+    scene.cameraShake(10, 1000)
+    tiles.setCurrentTilemap(tilemap`niveau22`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherSprite) {
     sprites.destroy(mySprite4)
@@ -327,6 +327,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherS
     Zarlenem_infecté.follow(Arlem, 75)
     controller.moveSprite(Arlem, 125, 125)
     animation.stopAnimation(animation.AnimationTypes.All, Arlem)
+    pause(2000)
     animation.runImageAnimation(
     Arlem,
     [img`
@@ -1787,7 +1788,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
     scene.cameraShake(10, 1000)
-    controller.startLightPulse(0xffffff, 1000)
+    controller.startLightPulse(0xff0000, 1000)
     tiles.placeOnTile(Arlem, tiles.getTileLocation(16, 16))
     tiles.placeOnTile(Zarlenem_infecté, tiles.getTileLocation(27, 1))
     tiles.setCurrentTilemap(tilemap`niveau19`)
@@ -3206,6 +3207,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy3, function (sprite, otherS
     Zarlenem_infecté.follow(Arlem, 0)
     pause(1000)
     Zarlenem_infecté.follow(Arlem, 75)
+    pause(5000)
 })
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     tiles.setCurrentTilemap(tilemap`niveau18`)
@@ -3266,11 +3268,30 @@ sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.rock2, function (sprite, location) {
     scene.cameraShake(10, 1000)
-    controller.startLightPulse(0xffffff, 1000)
+    controller.startLightPulse(0xff0000, 1000)
     tiles.placeOnTile(Arlem, tiles.getTileLocation(19, 1))
     tiles.placeOnTile(Zarlenem_infecté, tiles.getTileLocation(38, 1))
     scene.cameraShake(10, 1000)
     tiles.setCurrentTilemap(tilemap`niveau27`)
+    cristal2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . 8 . . . . . . . 
+        . . . . . . . 8 9 8 . . . . . . 
+        . . . . . . . 8 9 8 . . . . . . 
+        . . . . . . 8 9 9 8 8 . . . . . 
+        . . . . . . 8 9 8 8 8 . . . . . 
+        . . . . . . 8 9 8 8 8 . . . . . 
+        . . . . . . 8 9 8 8 8 . . . . . 
+        . . 8 8 . . 8 9 8 8 8 . . . . . 
+        . . 8 9 8 . 8 9 8 8 8 . . 8 8 . 
+        . . 8 8 9 8 8 9 8 8 8 . 8 9 8 . 
+        . . . 8 8 9 8 9 8 8 8 8 9 8 8 . 
+        . . . 8 8 8 8 9 8 8 8 9 8 8 . . 
+        . . . . . 8 8 9 8 8 8 8 8 . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Projectile)
+    tiles.placeOnRandomTile(cristal2, assets.tile`myTile`)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
@@ -3524,11 +3545,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     tiles.placeOnRandomTile(cristal, assets.tile`myTile0`)
 })
 let cristal: Sprite = null
+let cristal2: Sprite = null
 let mySprite3: Sprite = null
 let arlem_et_Zarlenem: Sprite = null
 let mySprite4: Sprite = null
-let Zarlenem: Sprite = null
 let Zarlenem_infecté: Sprite = null
+let Zarlenem: Sprite = null
 let Arlem: Sprite = null
 tiles.setTilemap(tilemap`niveau1`)
 music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
