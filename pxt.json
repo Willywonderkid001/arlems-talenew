@@ -6,7 +6,9 @@
         "controller": "*",
         "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
         "sprite-scaling": "*",
-        "animation": "*"
+        "animation": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
     },
     "files": [
         "main.blocks",
