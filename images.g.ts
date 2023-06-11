@@ -221,64 +221,6 @@ namespace myImages {
 .....aff....aff....
 .....111....111....
 `;
-            case "image8":
-            case "Arlem de coté gauche sur place":return img`
-. . . e e e e 2 . . . 
-. . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
-. . f f f f f f a a . 
-. . f f f f f f 8 9 . 
-. . f f f f f f 8 9 . 
-. . f a f f f f 8 9 . 
-. . f a f f f f 8 9 . 
-. . f a f f f f 8 9 . 
-. . f a f f f f a a . 
-. . f a f f f f 8 9 . 
-. . f d d d f f 8 9 . 
-. . f f f f f f 8 9 . 
-. . f f f f f f 8 9 . 
-. . f f f f f f 8 9 . 
-. . . f f f f . 8 8 . 
-. . . f f f f . . . . 
-. . . f f f f . . . . 
-. . . f f f f . . . . 
-. . . f f f f . . . . 
-. . . f f f f . . . . 
-. . . 1 1 1 1 . . . . 
-`;
-            case "image9":
-            case "Arlem de coté droit sur place":return img`
-. . . . e e e e e . . 
-. . . 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . 2 2 2 2 2 d 2 2 . 
-. . a 2 2 2 d 8 d . . 
-. . a 2 d d d d d . . 
-. . a 2 d d d d d . . 
-. . a f f f f f f . . 
-. a a f f f f f f . . 
-. a a f f f f f f . . 
-. 9 8 f f a f f f . . 
-. 9 8 f f a f f f . . 
-. 9 8 f f a f f f . . 
-. 9 8 f f a f f f . . 
-. a a f f a f f f . . 
-. 9 8 f f d d d f . . 
-. 9 8 f f f f f f . . 
-. 9 8 f f f f f f . . 
-. 9 8 f f f f f f . . 
-. 8 8 . f f f f . . . 
-. . . . f f f f . . . 
-. . . . f f f f . . . 
-. . . . f f f f . . . 
-. . . . f f f f . . . 
-. . . . f f f f . . . 
-. . . . 1 1 1 1 . . . 
-`;
             case "image10":
             case "Cristal du vent":return img`
 . . . . . . . . . . . . . . . . 
@@ -623,6 +565,64 @@ dddfffffffffddd
 ...aff...aff...
 ...aff...aff...
 ...222...222...
+`;
+            case "image8":
+            case "Arlem de coté gauche sur place":return img`
+. . . e e e e 2 . . . 
+. . e e e e 2 2 2 . . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
+. . f f f f f f a a . 
+. . f f f f f f 8 9 . 
+. . f f f f f f 8 9 . 
+. . f a f f f f 8 9 . 
+. . f a f f f f 8 9 . 
+. . f a f f f f 8 9 . 
+. . f a f f f f a a . 
+. . f a f f f f 8 9 . 
+. . f d d d f f 8 9 . 
+. . f f f f f f 8 9 . 
+. . f f f f f f 8 9 . 
+. . f f f f f f 8 9 . 
+. . . f f f f . 8 8 . 
+. . . f f f f . . . . 
+. . . f f f f . . . . 
+. . . f f f f . . . . 
+. . . f f f f . . . . 
+. . . f f f f . . . . 
+. . . 1 1 1 1 . . . . 
+`;
+            case "image9":
+            case "Arlem de coté droit sur place":return img`
+. . . 2 e e e e e . . 
+. . 2 2 2 e e e e . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
+. . a f f f f f f . . 
+. a a f f f f f f . . 
+. a a f f f f f f . . 
+. 9 8 f f a f f f . . 
+. 9 8 f f a f f f . . 
+. 9 8 f f a f f f . . 
+. 9 8 f f a f f f . . 
+. a a f f a f f f . . 
+. 9 8 f f d d d f . . 
+. 9 8 f f f f f f . . 
+. 9 8 f f f f f f . . 
+. 9 8 f f f f f f . . 
+. 8 8 . f f f f . . . 
+. . . . f f f f . . . 
+. . . . f f f f . . . 
+. . . . f f f f . . . 
+. . . . f f f f . . . 
+. . . . f f f f . . . 
+. . . . 1 1 1 1 . . . 
 `;
         }
         return null;
@@ -1073,11 +1073,11 @@ dddfffffffffddd
 . . . . . . . . . . . 
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1099,11 +1099,11 @@ dddfffffffffddd
 `, img`
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f a f f f f 8 9 . 
@@ -1126,11 +1126,11 @@ a f f . . f f f f . .
 `, img`
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1154,11 +1154,11 @@ a f f . . f f f f . .
 . . . . . . . . . . . 
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1180,11 +1180,11 @@ a f f . . f f f f . .
 `, img`
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1207,11 +1207,11 @@ a f f . . f f f f . .
 `, img`
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f a f f f 8 9 . 
@@ -1234,11 +1234,11 @@ a f f . . f f f f . .
 `, img`
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1262,11 +1262,11 @@ a f f . . f f f f . .
 . . . . . . . . . . . 
 . . . e e e e 2 . . . 
 . . e e e e 2 2 2 . . 
-. . e 2 e 2 2 2 2 . . 
-. 2 2 d 2 2 2 2 a . . 
-. . d 8 d d 2 2 a . . 
-. . d d d d d 2 a . . 
-. . d d d d d 2 a a . 
+. . e e e 2 2 2 2 . . 
+. e e 2 2 2 2 2 a . . 
+. . d 2 2 2 2 2 a . . 
+. . d d 2 2 2 2 a . . 
+. . d d d d 2 2 a a . 
 . . f f f f f f a a . 
 . . f f f f f f 8 9 . 
 . . f f f f f f 8 9 . 
@@ -1291,11 +1291,11 @@ a f f . . f f f f . .
 . . . . . . . . . . . 
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
@@ -1318,11 +1318,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f a f . . 
@@ -1346,11 +1346,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
@@ -1374,11 +1374,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
@@ -1403,11 +1403,11 @@ a f f . . f f f f . .
 . . . . . . . . . . . 
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
@@ -1430,11 +1430,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f a f f . . 
@@ -1458,11 +1458,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
@@ -1486,11 +1486,11 @@ a f f . . f f f f . .
 `, img`
 . . . 2 e e e e . . . 
 . . 2 2 2 e e e e . . 
-. . 2 2 2 2 e 2 e . . 
-. . a 2 2 2 2 d 2 2 . 
-. . a 2 2 d d 8 d . . 
-. . a 2 d d d d d . . 
-. a a 2 d d d d d . . 
+. . 2 2 2 2 e e e . . 
+. . a 2 2 2 2 2 e e . 
+. . a 2 2 2 2 2 d . . 
+. . a 2 2 2 2 d d . . 
+. a a 2 2 d d d d . . 
 . a a f f f f f f . . 
 . 9 8 f f f f f f . . 
 . 9 8 f f f f f f . . 
