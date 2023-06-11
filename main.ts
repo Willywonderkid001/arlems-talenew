@@ -31,6 +31,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.tuile, function (sprite, otherSp
     sprites.destroyAllSpritesOfKind(SpriteKind.enemy4)
     tiles.placeOnTile(Arlem, tiles.getTileLocation(28, 31))
     tiles.setCurrentTilemap(tilemap`forêt magique de la fée Fitza 2 1`)
+    game.showLongText("prenez le portail brun pour aller a la deuxièeme partie", DialogLayout.Center)
     controller.moveSprite(Arlem, 100, 100)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.teleporteur, function (sprite, otherSprite) {
@@ -453,6 +454,7 @@ statusbar.value = 200
 light.setBrightness(255)
 tiles.setTilemap(tilemap`forêt magique de la fée Fitza1`)
 game.showLongText("Bon il est partit ou mon frère. Je dois le retrouver", DialogLayout.Full)
+game.showLongText("trouve l'entré a l'autre partie de la forêt", DialogLayout.Full)
 music.play(music.createSong(assets.song`mySong`), music.PlaybackMode.LoopingInBackground)
 Arlem = sprites.create(assets.image`Arlem`, SpriteKind.Player)
 Guardien_de_la_forêt = sprites.create(assets.image`Gardien de la forêt`, SpriteKind.Enemy)
